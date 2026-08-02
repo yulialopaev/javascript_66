@@ -1,3 +1,5 @@
+'use strict';
+
 /* 
 Task: Astronaut Profile System
 
@@ -15,7 +17,7 @@ const astronautName = 'Jack';
 const astronautAge = 40;
 let isCommander = true;
 const planet = 'Mars';
-let missionDuration = 3; // in years
+let missionDuration = 180; // in days
 
 /* 
  3. Perform calculations:
@@ -24,9 +26,9 @@ let missionDuration = 3; // in years
 */
 
 const newAge = astronautAge + 10;
-console.log('Astraunaut age in 10 years:', newAge);
+console.log('Astronaut age in 10 years:', newAge);
 
-const newMissionDuration = missionDuration*365 + 30;
+const newMissionDuration = missionDuration + 30;
 console.log('Mission duration after 30-day extension:', newMissionDuration);
 
 /* 
@@ -51,7 +53,7 @@ Change:
     - commander status
 */
 
-missionDuration = 180; // in days
+missionDuration = 260; // in days
 isCommander = false;
 console.log('Updated Mission Duration: ' + missionDuration);
 console.log('Updated Commander Status: ' + isCommander);
