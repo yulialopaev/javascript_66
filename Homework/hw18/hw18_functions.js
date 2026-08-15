@@ -26,6 +26,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+  if (b === 0) return "You can not divide by zero";
   return a / b;
 }
 
@@ -40,6 +41,7 @@ function calculator(a, b, sign) {
     return multiply(a, b);
   }
   if (sign === "/") {
+    if (b === 0) return "You can not divide by zero";
     return divide(a, b);
   }
 }
@@ -48,6 +50,7 @@ console.log(calculator(3, 6, "+"));
 console.log(calculator(13, 8, "-"));
 console.log(calculator(10, 3, "*"));
 console.log(calculator(66, 11, "/"));
+console.log(calculator(66, 0, "/"));
 
 console.log("------ Function-expression ------");
 const add2 = function (a, b) {
@@ -63,6 +66,7 @@ const multiply2 = function (a, b) {
 };
 
 const divide2 = function (a, b) {
+  if (b === 0) return "You can not divide by zero";
   return a / b;
 };
 
@@ -77,13 +81,17 @@ console.log(calculator2(3, 6, "+"));
 console.log(calculator2(13, 8, "-"));
 console.log(calculator2(10, 3, "*"));
 console.log(calculator2(66, 11, "/"));
+console.log(calculator2(66, 0, "/"));
 
 console.log("------ Arrow function ------");
 
 const add3 = (a, b) => a + b;
 const subtract3 = (a, b) => a - b;
 const multiply3 = (a, b) => a * b;
-const divide3 = (a, b) => a / b;
+const divide3 = (a, b) => {
+  if (b === 0) return "You can not divide by zero";
+  return a / b;
+};
 
 const calculator3 = (a, b, sign) => {
   if (sign === "+") return add3(a, b);
@@ -96,3 +104,4 @@ console.log(calculator3(3, 6, "+"));
 console.log(calculator3(13, 8, "-"));
 console.log(calculator3(10, 3, "*"));
 console.log(calculator3(66, 11, "/"));
+console.log(calculator3(66, 0, "/"));
