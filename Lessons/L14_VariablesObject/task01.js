@@ -1,4 +1,4 @@
-'use strict'; // повышает устойчивость кода
+"use strict"; // повышает устойчивость кода
 
 console.log("Hello, world!");
 
@@ -14,7 +14,7 @@ console.log(number);
 number = 10;
 console.log(number);
 
-let greeting = 'Hello';
+let greeting = "Hello";
 console.log(greeting);
 
 let isAdmin = true;
@@ -31,7 +31,7 @@ console.log(number);
 
 console.log(typeof number);
 
-number = 'Vasya';
+number = "Vasya";
 console.log(number);
 console.log(typeof number);
 
