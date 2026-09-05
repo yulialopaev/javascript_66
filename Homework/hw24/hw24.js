@@ -138,7 +138,7 @@ async function runFridgeApp() {
   // Закрытие инферфейса readline после окончания ввода данных
   rl.close();
 
-  // Сохранение данные в файл CSV
+  // Сохранение данных в файл CSV
   const filePath = path.resolve("fridge.csv");
   try {
     await saveToCSV(filePath, fridge);
