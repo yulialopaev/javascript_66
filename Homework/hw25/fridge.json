@@ -1,0 +1,14 @@
+[
+  {
+    "name": "bread",
+    "count": 62,
+    "price": 13,
+    "expDate": "35435"
+  },
+  {
+    "name": "cheese",
+    "count": 5,
+    "price": 2.5,
+    "expDate": "43543436"
+  }
+]
