@@ -1,0 +1,27 @@
+<!--
+ 1. По имени пользователя определяет, является ли он существующим пользователем и если нет,
+ дает ему новую роль GUEST
+ 2. С клавиатуры ввести название блюда
+ 3. По кнопке "Искать" запускается приложение
+ 4. Вывести ответ на экран. В случае, если возникнет ERROR - вывести модальное окно -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart fridge</title>
+    <script src="main.js" defer></script>
+</head>
+<body>
+<div>
+    <h1>Smart fridge</h1>
+    <label for="user-name">Enter your name:</label>
+    <input type="text" id="user-name" placeholder="Bill">
+    <label for="dish-name">Enter dish name:</label>
+    <input type="text" id="dish-name" placeholder="Pizza">
+    <button type="button" id="search-button">Search...</button>
+    <div class="search-result"></div>
+</div>
+</body>
+</html>
