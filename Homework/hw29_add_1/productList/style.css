@@ -1,0 +1,69 @@
+body {
+  text-align: center;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+}
+
+#productForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#productInput {
+  border-radius: 10px;
+  border: 1px solid rgb(94 94 94);
+  padding: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+label {
+  font-size: 20px;
+}
+
+#addButton, #showButton, #addFromListButton {
+  border: 1px solid rgb(94 94 94);
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  background-color: #e1b12c;
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+#productInput:hover {
+  border: 2px solid rgb(94 94 94);
+}
+
+#addButton:hover, #showButton:hover, #addFromListButton:hover {
+  background-color: #d19b1c;
+  border: 2px solid rgb(94 94 94);
+}
+
+#messageText {
+  font-size: 16px;
+}
+
+#productListContainer {
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid rgb(145 143 143);
+}
+
+li {
+  font-size: 20px;
+  line-height: 1.2;
+  cursor: pointer;
+  text-align: left;
+}
+
+#fridgeContainer {
+  text-align: center;
+  margin-left: 200px;
+  margin-top: 60px;
+}
