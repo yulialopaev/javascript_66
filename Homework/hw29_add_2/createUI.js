@@ -25,6 +25,9 @@ export function createUI(app) {
     addProductButton.type = 'submit';
     addProductButton.textContent = 'Добавить';
 
+    const filterButtonsContainer = document.createElement("div")
+    filterButtonsContainer.classList.add("filter-buttons-container")
+
     const allFilterButton = document.createElement('button');
     allFilterButton.textContent = 'Все продукты';
 
@@ -35,6 +38,7 @@ export function createUI(app) {
     boughtFilterButton.textContent = 'Куплено';
 
     const draftContainer = document.createElement("div")
+    draftContainer.classList.add("draft-container")
 
     const createDraftButton = document.createElement("button");
     createDraftButton.textContent = "Создать черновик";
@@ -49,9 +53,9 @@ export function createUI(app) {
 
     const draftListContainer = document.createElement("div")
 
-
+    filterButtonsContainer.append(allFilterButton, toBuyFilterButton, boughtFilterButton)
     draftContainer.append(createDraftButton, saveDraftChangesButton, cancelDraftChangesButton, draftListContainer);
-    app.append(h1, addProductForm, allFilterButton, toBuyFilterButton, boughtFilterButton,
+    app.append(h1, addProductForm, filterButtonsContainer,
         productListContainer, draftContainer);
     addProductForm.append(labelForProductName, productName, labelForProductCategory, productCategory, addProductButton);
 

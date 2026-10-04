@@ -1,3 +1,37 @@
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.filter-buttons-container {
+    margin-top: 30px;
+}
+
+.draft-container {
+    margin-top: 40px;
+}
+
+label {
+    margin-left: 5px;
+}
+
+button {
+    border: 1px solid rgb(145 143 143);
+    border-radius: 10px;
+    /*font-family: "Inter", sans-serif;*/
+    font-size: 14px;
+    background-color: #e1b12c;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+input {
+    border-radius: 10px;
+    border: 1px solid rgb(145 143 143);
+    padding: 10px;
+    font-size: 14px;
+}
+
 .bought {
     text-decoration: line-through;
 }
