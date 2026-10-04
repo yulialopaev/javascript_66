@@ -87,6 +87,7 @@ draftListContainer.addEventListener("click", (event) => {
 })
 
 saveDraftChangesButton.addEventListener("click", () => {
+    isDraftMode = false;
     saveDraft(products, productListContainer, draftProducts, draftListContainer);
     saveDraftChangesButton.disabled = true;
     cancelDraftChangesButton.disabled = true;
@@ -99,10 +100,6 @@ cancelDraftChangesButton.addEventListener("click", () => {
     saveDraftChangesButton.disabled = true;
     cancelDraftChangesButton.disabled = true;
     cancelDraft(draftProducts, draftListContainer);
-
-    console.log(draftProducts)
-    console.log(products)
-
 
 });
 
