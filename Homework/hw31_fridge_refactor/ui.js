@@ -19,7 +19,11 @@ export function createUI(app) {
 
     // Info Panel
     const infoPanel = document.createElement("div");
-    infoPanel.textContent = "Основной список";
+    infoPanel.classList.add("mode-panel");
+    const modeTitle = document.createElement("h2");
+    const modeDescription = document.createElement("p");
+    modeDescription.textContent = "Вы находитесь в режиме основного списка";
+    modeTitle.textContent = "Основной список";
 
     const filterAllButton = document.createElement("button");
     filterAllButton.type = "button";
@@ -42,6 +46,7 @@ export function createUI(app) {
     );
 
     form.append(input, categoryInput, button);
+    infoPanel.append(modeTitle, modeDescription);
 
     const list = document.createElement("ul");
     const createDraftButton = document.createElement("button");
@@ -60,7 +65,7 @@ export function createUI(app) {
 
     app.append(form, messageText, infoPanel, list, filters, createDraftButton, saveDraftButton, cancelDraftButton);
     return {
-        form, messageText, infoPanel, input, list, categoryInput,
+        form, messageText, infoPanel, modeTitle, modeDescription, input, list, categoryInput,
         filterAllButton,
         filterNeedButton,
         filterBoughtButton,
@@ -73,31 +78,49 @@ export function createUI(app) {
 export function renderProducts(productsToRender, list) {
     list.replaceChildren();
 
+
     productsToRender.forEach(product => {
         const li = document.createElement("li");
+        const span = document.createElement("span");
 
         li.dataset.id = product.id;
 
-        li.textContent =
+        span.textContent =
             `${product.name} — ${product.category}`;
 
         if (product.bought) {
-            li.classList.add("bought");
+            span.classList.add("bought");
         }
         const infoButton = document.createElement("button");
         infoButton.type = "button";
         infoButton.textContent = "Show information";
-        li.append(infoButton);
+        li.append(span, infoButton);
+
+        let isSecondClick = false
         infoButton.addEventListener("click", (e) => {
+
             console.log("clicked");
-            showInformation(li, product);
-            e.stopPropagation();
+            if(!isSecondClick) {
+                showInformation(span, product);
+                e.stopPropagation();
+                infoButton.textContent = "Hide information";
+                isSecondClick = true;
+            } else {
+                e.stopPropagation();
+                span.textContent =
+                    `${product.name} — ${product.category}`;
+                infoButton.textContent = "Show information";
+                isSecondClick = false;
+            }
+
+
         })
         list.append(li);
     });
 }
 
-function showInformation(li, product) {
-       li.textContent = `${product.name} - ${product.category} - ${product.bought ? "куплено" : "не куплено"}` ;
+function showInformation(span, product) {
+    span.textContent = `${product.name} - ${product.category} - ${product.bought ? "куплено" : "не куплено"}`;
 }
+
 

@@ -1,7 +1,7 @@
 import {
     addProduct,
     cancelDraft,
-    createDraft,
+    createDraft, draftProducts,
     saveDraft,
     toggleProduct
 } from "./products.js";
@@ -14,7 +14,9 @@ const app = document.querySelector("#app");
 console.log(app);
 
 const {
-    form, input, messageText, infoPanel, list, categoryInput, filterAllButton,
+    form, input, messageText,
+    infoPanel, modeTitle, modeDescription, list,
+    categoryInput, filterAllButton,
     filterNeedButton,
     filterBoughtButton,
     createDraftButton,
@@ -27,15 +29,17 @@ let activeFilter = "all";
 // Функция переключения режима панели информации
 function updateMode(mode) {
     if (mode === "main") {
-        infoPanel.textContent = "Основной список";
+        modeTitle.textContent = "Основной список";
+        modeDescription.textContent = "Вы находитесь в режиме основного списка";
         infoPanel.classList = "mode-panel";
         createDraftButton.disabled = false;
         saveDraftButton.disabled = true;
         cancelDraftButton.disabled = true;
     }
     if (mode === "draft") {
-        infoPanel.textContent = "Черновик";
-        infoPanel.classList = "draft-mode";
+        modeTitle.textContent = "Черновик";
+        modeDescription.textContent = "Вы находитесь в режиме черновика";
+        infoPanel.classList.add("draft-mode");
         createDraftButton.disabled = true;
         saveDraftButton.disabled = false;
         cancelDraftButton.disabled = false;
@@ -62,7 +66,7 @@ function render() {
             messageText.textContent = "Купленные продукты не найдены";
         }
     }
-
+    updateMode(draftProducts === null ? "main" : "draft")
     renderProducts(visibleProducts, list);
 }
 
@@ -118,6 +122,7 @@ function handleSubmit(e) {
     const added = addProduct(productName, category);
     if (!added) {
         messageText.textContent = "Продукт уже существует. Пожалуйста, введите новый продукт";
+        return;
     }
     input.value = "";
     categoryInput.value = "";
@@ -132,7 +137,6 @@ createDraftButton.addEventListener(
     "click",
     () => {
         createDraft();
-        updateMode("draft");
         render();
     }
 );
@@ -140,8 +144,7 @@ createDraftButton.addEventListener(
 saveDraftButton.addEventListener(
     "click",
     () => {
-        updateMode("main");
-        saveDraft(list);
+        saveDraft();
         render();
     }
 );
@@ -149,14 +152,13 @@ saveDraftButton.addEventListener(
 cancelDraftButton.addEventListener(
     "click",
     () => {
-        cancelDraft(list);
-        updateMode("main");
+        cancelDraft();
         render();
     }
 );
 
 
-updateMode("main");
+
 render();
 
 

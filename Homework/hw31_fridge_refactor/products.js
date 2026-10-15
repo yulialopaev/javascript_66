@@ -72,7 +72,6 @@ export function cancelDraft() {
     }
 
     draftProducts = null;
-
 }
 
 export function addProduct(name, category) {
@@ -80,7 +79,6 @@ export function addProduct(name, category) {
     const cleanCategory = category.trim();
 
     if (!cleanName || !cleanCategory) {
-
         return false;
     }
 
@@ -98,7 +96,7 @@ export function addProduct(name, category) {
     };
 
     currentProducts.push(newProduct);
-    console.log(currentProducts);
+
     return true;
 }
 
