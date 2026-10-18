@@ -1,0 +1,39 @@
+#registerButton {
+    border: 1px solid rgb(145 143 143);
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #e1b12c;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.deleteButton {
+    border: 1px solid rgb(145 143 143);
+    border-radius: 10px;
+    margin-left: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+input {
+    border-radius: 10px;
+    border: 1px solid rgb(145 143 143);
+    padding: 10px;
+    font-size: 14px;
+    width: 200px;
+}
+
+#message {
+    color: red;
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-top: 5px;
+    font-size: 18px;
+}
