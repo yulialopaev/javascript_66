@@ -3,19 +3,56 @@ const ageInput = document.querySelector('#ageInput');
 const registrationForm = document.querySelector('#registrationForm');
 const message = document.querySelector('#message');
 const userListBox = document.querySelector('#userListBox');
-const userList = document.createElement('ul')
-const h2 = document.createElement('h2')
-h2.textContent = 'Registered Users'
-const h4 = document.createElement('h4')
-h4.textContent = 'Total Number Of Users: 0'
-userListBox.append(h2, userList, h4)
+const userList = document.createElement('ul');
+const h2 = document.createElement('h2');
+h2.textContent = 'Registered Users';
+const h4 = document.createElement('h4');
+h4.textContent = 'Total Number Of Users: 0';
+const showAllButton = document.createElement('button');
+showAllButton.textContent = 'Show All';
+const showAdultsButton = document.createElement('button');
+showAdultsButton.textContent = 'Show Adults';
+userListBox.append(h2, showAllButton, showAdultsButton, userList, h4);
 
-const createManager = createUserManager()
+const createManager = createUserManager();
+let isAdultsOnly = false;
+
+function renderUsers() {
+    let users = createManager.getUsers();
+
+    if (isAdultsOnly) {
+        users = users.filter((user) => user.age >= 18);
+        h4.textContent = `Total Number Of Adult Users: ${users.length}`;
+    } else {
+        h4.textContent = `Total Number Of Users: ${users.length}`;
+    }
+
+    userList.replaceChildren();
+
+    users.forEach((user) => {
+        const {name, age} = user;
+        const li = document.createElement('li');
+        li.textContent = `${name}, ${age} years old`;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('deleteButton');
+        deleteButton.textContent = 'Delete';
+        li.append(deleteButton);
+
+        deleteButton.addEventListener("click", (e) => {
+            e.stopPropagation();
+            createManager.deleteUser(user);
+            renderUsers();
+        })
+
+        userList.append(li);
+    })
+}
 
 registrationForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        message.textContent = ''
-        userNameInput.focus()
+        message.textContent = '';
+        userNameInput.focus();
 
         try {
             const rawUser = {
@@ -28,31 +65,9 @@ registrationForm.addEventListener('submit', (event) => {
 
             console.log("Registration completed successfully");
 
+            renderUsers()
             userNameInput.value = '';
             ageInput.value = ''
-
-            const users = createManager.getUsers()
-            h4.textContent = `Total Number Of Users: ${users.length}`
-
-            userList.replaceChildren()
-
-            users.forEach(user => {
-                const li = document.createElement('li');
-                li.textContent = `${user.name}, ${user.age} years old`;
-
-                const deleteButton = document.createElement('button');
-                deleteButton.classList.add('deleteButton');
-                deleteButton.textContent = 'Delete';
-                li.append(deleteButton);
-
-                deleteButton.addEventListener("click", (e) => {
-                    e.stopPropagation();
-                    createManager.deleteUser(user);
-                    // дальше я запуталась и не могу сообразить, как новый массив попадет в лист пользователей
-                })
-
-                userList.append(li);
-            })
 
         } catch (e) {
             console.log(e.message);
@@ -60,7 +75,23 @@ registrationForm.addEventListener('submit', (event) => {
         } finally {
             console.log("Registration attempt completed");
         }
-
     }
 )
+
+showAllButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    isAdultsOnly = false;
+    renderUsers();
+})
+
+showAdultsButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    userList.replaceChildren();
+    isAdultsOnly = true;
+    renderUsers();
+})
+
+
+
+
 

@@ -7,7 +7,7 @@
     cursor: pointer;
 }
 
-.deleteButton {
+button {
     border: 1px solid rgb(145 143 143);
     border-radius: 10px;
     margin-left: 10px;

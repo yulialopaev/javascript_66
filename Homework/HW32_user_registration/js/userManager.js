@@ -11,7 +11,11 @@ function createUserManager() {
     }
 
     function deleteUser(user) {
-        return users.filter((u) => u !== user);
+        const index = users.findIndex(u => u.id === user.id);
+        if (index !== -1) {
+            users.splice(index, 1);
+        }
+        console.log(users)
     }
 
     return {
