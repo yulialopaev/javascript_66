@@ -95,22 +95,22 @@ function printInfo(array) {
 
 printInfo(products);
 
-function printArray2(arr){
-    if(!Array.isArray(arr)){
-        console.log("неопознанный параметр");
-        return;
-    } else {
-        arr.forEach((item, i) =>{
-            console.log(`Товар ${i+1}`);
-            for(let key in item){  
-                let value = typeof(item[key])!=='function'? item[key]:item[key]();
-                console.log(`   ${key}:${value}`)
-            }
-        })
+// function printArray2(arr){
+//     if(!Array.isArray(arr)){
+//         console.log("неопознанный параметр");
+//         return;
+//     } else {
+//         arr.forEach((item, i) =>{
+//             console.log(`Товар ${i+1}`);
+//             for(let key in item){  
+//                 let value = typeof(item[key])!=='function'? item[key]:item[key]();
+//                 console.log(`   ${key}:${value}`)
+//             }
+//         })
  
-    }
+//     }
  
-}
+// }
 
 console.log("--------------------------")
-printArray2(products);
+// printArray2(products);

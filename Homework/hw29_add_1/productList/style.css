@@ -67,3 +67,7 @@ li {
   margin-left: 200px;
   margin-top: 60px;
 }
+
+.completed {
+  text-decoration: line-through;
+}

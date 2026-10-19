@@ -1,9 +1,15 @@
 import {createUI} from "./createUI.js";
 import {uniqueFridgeProducts} from "./productsInFridge.js";
 
+
 const app = document.querySelector("#app");
 
-const {form, productInput, productList, addFromListButton, messageText} = createUI(app);
+const {
+    form, productInput,
+    productList, addFromListButton,
+    messageText
+} = createUI(app);
+
 const uniqueProducts = new Set();
 const productsToBuy = []
 
@@ -20,6 +26,7 @@ function handleSubmit(event) {
         productInput.focus();
         return;
     }
+
 
     if (uniqueProducts.has(productName.toLowerCase())) {
         productInput.value = "";

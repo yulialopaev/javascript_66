@@ -40,12 +40,12 @@ export function filterProducts(productsArray, filter, container) {
     }
     if (filter === "toBuy") {
         container.textContent = ""
-        const toBuyProducts = productsArray.filter(product => product.bought === false)
+        const toBuyProducts = productsArray.filter(product => !product.bought)
         renderProducts(toBuyProducts, container)
     }
     if (filter === "bought") {
         container.textContent = ""
-        const boughtProducts = productsArray.filter(product => product.bought === true)
+        const boughtProducts = productsArray.filter(product => product.bought)
         renderProducts(boughtProducts, container)
     }
 }

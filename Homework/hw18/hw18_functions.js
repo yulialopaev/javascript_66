@@ -88,10 +88,7 @@ console.log("------ Arrow function ------");
 const add3 = (a, b) => a + b;
 const subtract3 = (a, b) => a - b;
 const multiply3 = (a, b) => a * b;
-const divide3 = (a, b) => {
-  if (b === 0) return "You can not divide by zero";
-  return a / b;
-};
+const divide3 = (a, b) => (b === 0 ? "You can not divide by zero" : a / b);
 
 const calculator3 = (a, b, sign) => {
   if (sign === "+") return add3(a, b);
@@ -105,3 +102,31 @@ console.log(calculator3(13, 8, "-"));
 console.log(calculator3(10, 3, "*"));
 console.log(calculator3(66, 11, "/"));
 console.log(calculator3(66, 0, "/"));
+
+console.log("------ Switch case ------");
+const calculator4 = (a, b, operator) => {
+  switch (operator) {
+    case "+":
+      return a + b;
+    case "-":
+      return a - b;
+    case "*":
+      return a * b;
+    case "/":
+      return b === 0 ? "You can not divide by zero" : a / b;
+  }
+};
+
+console.log(calculator4(3, 6, "+"));
+console.log(calculator4(13, 8, "-"));
+console.log(calculator4(10, 3, "*"));
+console.log(calculator4(66, 11, "/"));
+console.log(calculator4(66, 0, "/"));
+
+console.log("---------Callback------------");
+
+const calculate = (a, b, func) => {
+  return func(a, b);
+};
+
+console.log(calculate(3, 5, add));

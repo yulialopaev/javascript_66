@@ -58,3 +58,18 @@ const result3 = bigValue(strings, comparatorDeclaration)
 console.log(result3);
 
 
+function bigValueWithoutSort(array, comparator) {
+  let biggest = array[0]
+
+  for(let i=1; i<array.length; i++) {
+    if(comparator(array[i], biggest) > 0) {
+      biggest = array[i]
+    }
+  }
+
+  return biggest
+}
+
+const result4 = bigValue(strings, comparatorDeclaration)
+console.log(result3);
+

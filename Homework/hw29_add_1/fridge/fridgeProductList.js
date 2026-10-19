@@ -17,7 +17,7 @@ export const uniqueFridgeProducts = getUniqueProducts(fridgeProductList);
 
 const uniqueProductList = document.createElement("ul")
 const fridgeTitle = document.createElement("h2")
-fridgeTitle.textContent = "Products in your fridge"
+fridgeTitle.textContent = "Продукты в холодильнике"
 
 const fridgeContainer = document.querySelector("#fridgeContainer")
 // fridgeContainer.id = "fridgeContainer"

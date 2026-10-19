@@ -16,13 +16,20 @@ function Account(iban, owner, balance) {
   this.iban = iban;
   this.owner = owner;
   this.balance = balance;
-  this.deposit = (amount) => (this.balance += amount);
+  this.deposit = (amount) => {
+    if (typeof amount !== "number" || amount <= 0 || !Number.isFinite(amount)) {
+      return false;
+    } else {
+      this.balance += amount;
+      return true;
+    }
+  };
   this.withdraw = (amount) => {
-    if (this.balance >= amount) {
+    if (typeof amount !== "number" || amount <= 0 || amount > this.balance) {
+      return false;
+    } else {
       this.balance -= amount;
       return true;
-    } else {
-      return false;
     }
   };
   this.getBalance = () => this.balance;
@@ -34,6 +41,7 @@ const account2 = new Account(365986312456, "Cersei Lannister", 500);
 const account3 = new Account(652341689523, "Petyr Baelish", 2000);
 const account4 = new Account(123456789012, "Daenerys Targaryen", 3000);
 const account5 = new Account(952314658974, "Ned Stark", 4000);
+
 
 console.log(account1); // balance = 1000
 account1.deposit(450);
@@ -68,10 +76,8 @@ withdraw соответственно.
 console.log("==========b==========");
 function transfer(from, to, amount) {
   if (from.withdraw(amount)) {
-    to.deposit(amount)
-  }
-  else return
-  
+    to.deposit(amount);
+  } else return;
 }
 
 transfer(account1, account2, 99);

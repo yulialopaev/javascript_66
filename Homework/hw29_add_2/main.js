@@ -21,7 +21,7 @@ const {
     cancelDraftChangesButton, draftListContainer
 } = createUI(app);
 
-renderProducts(products, productListContainer);
+// renderProducts(products, productListContainer);
 
 function handleSubmit(event) {
     event.preventDefault();

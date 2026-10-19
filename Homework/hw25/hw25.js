@@ -56,11 +56,11 @@ async function readFromCsvFile(filePath) {
   console.log("Данные из файла CSV:\n", fileData);
 }
 
-// Вспомогательная функция для удаления продукта 
+// Вспомогательная функция для удаления продукта
 function removeProduct(fridge, name) {
-  fridge = fridge.filter((product) => name !== product.name);
+  const updatedFridge = fridge.filter((product) => name !== product.name);
   console.log(`${name} count = 0. Product removed from the fridge`);
-  return fridge;
+  return updatedFridge;
 }
 
 // Функция для добавления продукта
@@ -75,10 +75,14 @@ function addProduct(fridge, name, count, price, expDate) {
 function updateProduct(fridge, name, count, price, expDate) {
   const index = fridge.findIndex((product) => product.name === name);
 
+  if (index === -1) return fridge;
+
   if (count > 0) {
-    const sum = (fridge[index].count += count);
+    fridge[index].count += count;
+    fridge[index].price = price;
+    fridge[index].expDate = expDate;
     console.log(
-      `Updated ${name} product. Added ${count}. New count: ${sum}. New price: ${price}. New expDate: ${expDate}`,
+      `Updated ${name} product. Added ${count}. New count: ${fridge[index].count}. New price: ${price}. New expDate: ${expDate}`,
     );
   } else if (count < 0) {
     let result = fridge[index].count + count;
@@ -98,6 +102,8 @@ function updateProduct(fridge, name, count, price, expDate) {
       fridge = removeProduct(fridge, fridge[index].name);
     }
   }
+
+  return fridge
 }
 
 function isPositiveNumber(count) {
@@ -197,12 +203,12 @@ async function runFridgeApp() {
     // Удаление существующего продукта при вводе 0
     if (numCount === 0 && existingProduct) {
       fridge = removeProduct(fridge, existingProduct.name);
+      continue
     }
 
     // Изменение количества существующего продукта
     if (existingProduct) {
-      updateProduct(fridge, prNameTrim, numCount, price, expDate);
-
+      fridge = updateProduct(fridge, prNameTrim, numCount, price, expDate);
     } else {
       // Добавление продукта в массив fridge
       addProduct(fridge, prNameTrim, numCount, price, expDate);

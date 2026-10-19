@@ -27,11 +27,11 @@ const fridgeList = document.createElement("div")
 const {groceryForm, productInput, groceryList, groceryListContainer, addMissingProductsButton, messageText} = createUI()
 fridgeList.append(fridgeContainer)
 app.append(fridgeList, groceryListContainer)
-let answerArray = []
+let answerArray = [];
 
 async function fridgeHandleSubmit(event) {
     event.preventDefault();
-    searchButton.textContent = "Loading..."
+    searchButton.textContent = "Загрузка..."
     addMissingProductsButton.disabled = false;
 
     try {
@@ -42,13 +42,13 @@ async function fridgeHandleSubmit(event) {
         console.log(authenticatedUser, dishTitle);
 
         if (!userName) {
-            throw new Error("User name is required");
+            throw new Error("Имя пользователя обязательно");
         }
         if (!dishTitle) {
-            throw new Error("Dish title is required");
+            throw new Error("Название блюда обязательно");
         }
         if (!authenticatedUser) {
-            throw new Error("User not found");
+            throw new Error("Пользователь не найден");
         }
 
         const basePrompt = createBasePromptByRole(authenticatedUser)
@@ -74,7 +74,7 @@ async function fridgeHandleSubmit(event) {
         errorMessage.textContent = error.message || "Произошла непредвиденная ошибка"
         errorModal.showModal()
     }
-    searchButton.textContent = "Search"
+    searchButton.textContent = "Поиск"
 }
 
 form.addEventListener("submit", fridgeHandleSubmit)
@@ -88,20 +88,20 @@ const productsToBuy = []
 
 function groceryHandleSubmit(event) {
     event.preventDefault();
-    messageText.textContent = "Enter a product name";
+    messageText.textContent = "Введите название продукта";
     messageText.style.color = "black";
 
     const productName = productInput.value.trim();
 
     if (!productName) {
-        messageText.textContent = "Product cannot be empty. Enter a product name";
+        messageText.textContent = "Название не может быть пустым. Введите название продукта";
         messageText.style.color = "red";
         productInput.focus();
         return;
     }
     if (uniqueProducts.has(productName.toLowerCase())) {
         productInput.value = "";
-        messageText.textContent = "Product already exists. Enter a new product name";
+        messageText.textContent = "Продукт уже существует. Введите новое название продукта";
         messageText.style.color = "red";
         return;
     }
@@ -129,7 +129,6 @@ groceryForm.addEventListener("submit", groceryHandleSubmit)
 
 addMissingProductsButton.addEventListener("click", () => {
 
-
     const addedList = new Set([...uniqueProducts, ...uniqueFridgeProducts]);
     const newProducts = [];
 
@@ -140,6 +139,8 @@ addMissingProductsButton.addEventListener("click", () => {
             newProducts.push(lowerItem);
         }
     }
+
+
     for (const newProduct of newProducts) {
         const newLi = document.createElement("li");
         newLi.textContent = newProduct.charAt(0).toUpperCase() + newProduct.slice(1);

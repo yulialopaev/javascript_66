@@ -53,7 +53,7 @@ async function runFridgeApp() {
 
   console.log("----- Fridge inventory managing app -----\n");
   console.log(
-    "--> Enter the name of the products. To finish enter 'exit', 'stop' or 'finish' <--\n",
+    "--> Enter the name of the products. To finish enter 'exit', 'stop', 'стоп' or 'выход' <--\n",
   );
 
   while (true) {
