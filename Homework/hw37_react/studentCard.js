@@ -32,6 +32,8 @@ const student3 = {
     image: "./images/ron.jpg"
 }
 
+const students = [student, student2, student3];
+
 function StudentCard(props) {
     return (
         <div className={"student-card"}>
@@ -51,9 +53,9 @@ root.render(
     <div id={"container"}>
         <h1>Hogwarts Student Registry</h1>
         <div className={"student-container"}>
-            <StudentCard student={student}/>
-            <StudentCard student={student2}/>
-            <StudentCard student={student3}/>
+            {students.map(student => (
+                <StudentCard student={student}/>
+            ))}
         </div>
     </div>
 );
