@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.student-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+h1 {
+    color: #e1b12c;
+    font-family: "Cinzel", serif;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 20px auto 10px auto;
+}
+
+h2 {
+    margin: 10px 0;
+}
+
+.student-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e1b12c;
+    border-radius: 16px;
+    width: 50%;
+    text-align: left;
+    padding: 20px;
+    margin: 15px;
+    position: relative;
+}
+
+.student-info {
+
+}
+
+.status-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: 1px solid #e1b12c;
+    border-radius: 16px;
+    padding: 4px 12px;
+    font-size: 14px;
+    width: auto;
+}
+
+header {
+    margin: 20px auto;
+}
+
+footer {
+    margin-top: 20px;
+}
