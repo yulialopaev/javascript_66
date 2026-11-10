@@ -36,10 +36,12 @@ src/
 ```
 
 ## Запуск проекта
+```
 git clone https://github.com/yulialopaev/javascript_66.git
 cd javascript_66/Homework/hw39_course_catalog
 npm install
 npm run dev
+```
 
 
 ## Выполнение требований ТЗ (Checklist)
