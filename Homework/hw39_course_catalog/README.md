@@ -37,12 +37,20 @@ src/
 
 ## Запуск проекта
 1. Клонируйте репозиторий
-```git clone https://github.com/yulialopaev/javascript_66.git```
-```cd javascript_66/Homework/hw39_course_catalog```
+```
+git clone https://github.com/yulialopaev/javascript_66.git
+```
+```
+cd javascript_66/Homework/hw39_course_catalog
+```
 2. Установите зависимости
-```npm install```
+```
+npm install
+```
 3. Запустите проект
-```npm run dev```
+```
+npm run dev
+```
 
 ## Выполнение требований ТЗ (Checklist)
 - [x] Создан отдельный проект Vite + React JavaScript
