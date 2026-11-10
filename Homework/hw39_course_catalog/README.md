@@ -18,6 +18,7 @@
 
 
 ## Структура проекта
+```
 src/
 ├── components/
 │   ├── Header.jsx              # Заголовок приложения и общая информация
@@ -32,6 +33,7 @@ src/
 ├── App.css                     # Основные стили компонентов
 ├── index.css                   # Глобальные стили
 └── main.jsx                    # Точка входа Vite / React
+```
 
 ## Запуск проекта
 git clone https://github.com/yulialopaev/javascript_66.git
