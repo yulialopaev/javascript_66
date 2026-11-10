@@ -36,12 +36,13 @@ src/
 ```
 
 ## Запуск проекта
-```
-git clone https://github.com/yulialopaev/javascript_66.git
-cd javascript_66/Homework/hw39_course_catalog
-npm install
-npm run dev
-```
+1. Клонируйте репозиторий
+`git clone https://github.com/yulialopaev/javascript_66.git`
+`cd javascript_66/Homework/hw39_course_catalog`
+2. Установите зависимости
+`npm install`
+3. Запустите проект
+`npm run dev`
 
 
 ## Выполнение требований ТЗ (Checklist)
