@@ -1,0 +1,79 @@
+header, footer {
+    background-color: darkslategrey;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid black;
+    margin: 10px;
+    position: relative;
+    padding: 10px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 16px;
+    padding: 3px 10px;
+    font-size: 14px;
+}
+
+.available {
+    color: green;
+    border: 1px solid green;
+}
+
+.unavailable {
+    color: orangered;
+    border: 1px solid orangered;
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1140px;
+    width: 100%;
+    margin: 28px auto;
+    padding: 0 20px;
+}
+
+.book-list h2 {
+    flex-basis: 100%; /* Занимает всю ширину ряда и переносит карточки ниже */
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.book-list > p {
+    flex-basis: 100%;
+    text-align: center;
+    color: #64748b;
+    font-style: italic;
+}
+
+.classic {
+    color: #217070;
+    font-weight: bold;
+}
+
+.genres-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+h1 {
+    margin-bottom: 20px
+}
