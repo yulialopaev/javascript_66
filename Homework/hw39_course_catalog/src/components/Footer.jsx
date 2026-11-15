@@ -1,8 +1,11 @@
 function Footer() {
 
+        const date = new Date();
+    const year = date.getFullYear();
+
     return (
         <footer>
-            <p>Course Catalog | Built with React & Vite</p>
+            <p>Course Catalog - learning project - © {year}</p>
         </footer>
     )
 }

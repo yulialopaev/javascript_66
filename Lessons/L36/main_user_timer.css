@@ -1,0 +1,42 @@
+/*
+    Общие настройки размеров элементов.
+*/
+* {
+    box-sizing: border-box;
+}
+
+/*
+    Оформление страницы.
+*/
+body {
+    margin: 0;
+    padding: 30px 15px;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #f3f5f9;
+    color: #263238;
+}
+
+/*
+    Центральный контейнер приложения.
+*/
+.container {
+    max-width: 650px;
+
+    margin: 0 auto;
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    color: #1d3557;
+}

@@ -1,0 +1,77 @@
+/*
+    Подпись к полю ввода.
+*/
+label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+}
+
+/*
+    Поле ввода имени.
+*/
+input {
+    width: 100%;
+
+    padding: 12px;
+    margin-bottom: 20px;
+
+    font-size: 16px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+/*
+    Сетка кнопок: две колонки.
+*/
+.buttons {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+/*
+    Общий стиль кнопок.
+*/
+button {
+    padding: 12px;
+
+    background-color: #2563eb;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+/*
+    Область вывода результата.
+*/
+#result {
+    margin-top: 25px;
+    padding: 15px;
+
+    background-color: #eff6ff;
+
+    border-radius: 6px;
+}
+
+/*
+    На узких экранах кнопки располагаются
+    в одну колонку.
+*/
+@media (max-width: 480px) {
+    .buttons {
+        grid-template-columns: 1fr;
+    }
+}

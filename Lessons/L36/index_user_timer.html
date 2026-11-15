@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!--
+       Адаптация страницы к размеру экрана.
+    -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Context Demo</title>
+
+    <!-- Общие стили страницы -->
+    <link rel="stylesheet" href="main_user_timer.css">
+
+    <!-- Стили элементов приложения -->
+    <link rel="stylesheet" href="demo_user_timer.css">
+
+    <!--
+       Подключаем JavaScript через defer.
+
+       Скрипт выполнится после разбора HTML.
+       Поэтому все элементы страницы будут доступны.
+    -->
+    <script src="user_timer.js" defer></script>
+</head>
+
+<body>
+<main class="container">
+    <h1>Javascript Context Demo</h1>
+    <label for="userName">User name</label>
+    <input type="text" id="userName" name="userName">
+    
+    <button id="showNow">Show now</button>
+    <button id="showBroken">Show later (broken)</button>
+    <button id="showArrow">Show later arrow</button>
+    <button id="showBind">Show later (bind)</button>
+
+    <p id="result">Waiting for action...</p>
+</main>
+
+
+</body>

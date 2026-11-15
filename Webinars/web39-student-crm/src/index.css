@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 24px;
+    font-family: Arial, sans-serif;
+}
+
+.student-card {
+    margin: 12px;
+    padding: 16px;
+    border: 1px solid #4148cf;
+}
+
+.student-card-active {
+    border-left: 5px solid green;
+}
+
+.student-card-paused {
+    border-left: 5px solid orange;
+}

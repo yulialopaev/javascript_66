@@ -1,0 +1,125 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+header {
+    background-color: darkslategray;
+    color: #ffffff;
+    padding: 32px 24px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    margin-top: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.user-info {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 0 16px;
+    text-align: left;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.user-info h2 {
+    font-size: 24px;
+    color: #122a0f;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.user-info p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.dash-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 0 16px;
+    position: relative;
+    text-align: left;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.dash-box h2 {
+    font-size: 22px;
+    color: #122a0f;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.dash-box p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.active {
+    background-color: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+.inactive {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+.device-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.device-card {
+    flex: 1 1 200px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.device-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: #cbd5e1;
+}
+
+.device-card h3 {
+    font-size: 18px;
+    color: #0f172a;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.device-type {
+    font-size: 13px;
+    color: #64748b;
+}
