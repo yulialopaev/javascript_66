@@ -1,0 +1,157 @@
+/* ---------- Палитра: зелёный, коричневый, тыква ---------- */
+:root {
+    --bg: #e6e9d2;          /* светлый мох */
+    --card: #e8d1b6;        /* светлый крем */
+    --text: #3e2a1b;        /* тёмная кора */
+    --muted: #7a6450;       /* приглушённый коричневый */
+    --pumpkin: #d8cfcb;     /* тыква: основной акцент */
+    --pumpkin-dark: #b04e12;
+    --green: #587a3c;       /* мох: фокус и детали */
+    --green-dark: #3a5a2a;   /* хвоя */
+    --brown: #7a4a2b;       /* кора: удаление */
+    --border: #d2d8b4;
+
+    --radius: 12px;
+    color-scheme: light;
+}
+
+/* ---------- Общие сбросы (перекрывают стили шаблона Vite) ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: block;
+    margin: 0;
+    min-height: 100vh;
+    padding: 48px 16px;
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+}
+
+#root {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+/* ---------- Карточка со списком ---------- */
+.student-list {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 12px 32px rgba(58, 90, 42, 0.18);
+}
+
+/* ---------- Строка добавления ---------- */
+.add-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-row input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 14px;
+    font: inherit;
+    color: var(--text);
+    background: #fff;
+    border: 1px solid var(--pumpkin);
+    border-radius: var(--radius);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.add-row input::placeholder {
+    color: var(--muted);
+    opacity: 0.75;
+}
+
+.add-row input:focus {
+    outline: none;
+    border-color: var(--pumpkin-dark);
+    box-shadow: 0 0 0 3px rgb(165 113 82 / 0.3);
+}
+
+/* ---------- Кнопки ---------- */
+.student-list button {
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    border-radius: var(--radius);
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.student-list button:active {
+    transform: translateY(1px);
+}
+
+.student-list button:focus-visible {
+    outline: 3px solid var(--green);
+    outline-offset: 2px;
+}
+
+.student-list .add {
+    padding: 12px 18px;
+    color: #fff;
+    background: var(--pumpkin-dark);
+    white-space: nowrap;
+}
+
+.student-list .add:hover {
+    background: var(--pumpkin-dark);
+}
+
+.student-list .delete {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    color: var(--brown);
+    background: transparent;
+    border: 1.5px solid var(--brown);
+}
+
+.student-list .delete:hover {
+    color: #fff;
+    background: var(--brown);
+}
+
+/* ---------- Список студентов ---------- */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.list p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0;
+    padding: 12px 14px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--pumpkin-dark);
+    border-radius: var(--radius);
+    font-weight: 500;
+}
+
+/* ---------- Маленькие экраны ---------- */
+@media (max-width: 480px) {
+    body {
+        padding: 24px 12px;
+    }
+
+    .student-list {
+        padding: 16px;
+    }
+
+    .add-row {
+        flex-direction: column;
+    }
+}
