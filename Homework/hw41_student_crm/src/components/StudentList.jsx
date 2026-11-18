@@ -15,9 +15,12 @@ function StudentList() {
     ]);
 
     function addStudent(name) {
+        const trimmedName = name.trim();
+        if (!trimmedName) return;
+
         const newStudent = {
             id: crypto.randomUUID(),
-            name
+            name: trimmedName
         }
 
         const newStudents = [...students, newStudent];
