@@ -107,9 +107,9 @@ header h1 {
 }
 
 .device-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border-color: #cbd5e1;
+    /*transform: translateY(-2px);*/
+    /*box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);*/
+    /*border-color: #cbd5e1;*/
 }
 
 .device-card h3 {
@@ -122,4 +122,39 @@ header h1 {
 .device-type {
     font-size: 13px;
     color: #64748b;
+}
+
+.delete-button {
+    margin-top: 8px;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+.delete-button:hover {
+    border-color: #b91c1c;
+}
+
+button {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.add-button {
+    margin: 0 8px;
+    background-color: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+.add-button:hover {
+    border-color: #15803d;
 }

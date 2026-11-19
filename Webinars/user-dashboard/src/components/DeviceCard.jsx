@@ -1,8 +1,10 @@
-function DeviceCard({device}) {
+function DeviceCard({device, onClick}) {
+
     return (
-        <div className="device-card">
+        <div>
             <h3>{device.name}</h3>
             <p className={"device-type"}>Тип: {device.type}</p>
+
         </div>
     )
 }

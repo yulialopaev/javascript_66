@@ -7,6 +7,7 @@ import DeviceList from "./components/DeviceList.jsx";
 import {initialDevices} from "./data/devices.js";
 import Header from "./components/Header.jsx";
 
+
 function App() {
 
 
@@ -15,7 +16,7 @@ function App() {
             <Header/>
             <UserInfo user={user}/>
             <SubscriptionInfo subscription={subscription}/>
-            <DeviceList devices={initialDevices}/>
+            <DeviceList initialDevices={initialDevices}/>
         </div>
     )
 }
