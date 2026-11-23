@@ -1,16 +1,38 @@
-# React + Vite
+# Task manager
+Небольшой менеджер для управления задачами
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Технологии
+- Vite + React
+- CSS3
+- JavaScript (ES6+)
 
-Currently, two official plugins are available:
+## Функционал
+- Отображать список задач.
+- Добавлять новую задачу.
+- Удалять задачу.
+- Отмечать задачу выполненной.
+- Возвращать задачу в статус невыполненной.
+- Показывать общее количество задач.
+- Показывать количество выполненных задач.
+- Удалять выполненные задачи.
+- Очищать весь список.
+- Отображать сообщение при пустом списке.
+- Фильтровать задачи по статусу (все, выполненные, невыполненные).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Запуск проекта
 
-## React Compiler
+1. Клонируйте репозиторий
+```bash
+git clone https://github.com/yulialopaev/javascript_66.git
+cd javascript_66/Homework/hw42_task_manager
+```
+2. Установите зависимости
+```bash
+npm install
+```
+3. Запустите проект
+```bash
+npm run dev
+```
+4. Откройте в браузере адрес, который покажет Vite в терминале
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
