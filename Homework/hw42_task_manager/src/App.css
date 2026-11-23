@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    background-color: #f5f6f8;
+    color: #1f2937;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+.task-list {
+    text-align: left;
+}
+
+.delete-button {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    margin: 0;
+}
+
+.delete-button:hover {
+    border-color: #b91c1c;
+}
+
+button {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.add-button {
+    margin: 0 8px;
+    background-color: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+.add-button:hover {
+    border-color: #15803d;
+}
+
+.filter-button {
+    padding: 4px 12px;
+    border-radius: 16px;
+    /*font-size: 15px;*/
+    font-weight: 600;
+    line-height: 1.4;
+    border: 1px solid #a8acb3;
+    margin: 10px 5px 10px 0;
+}
+
+.filter-button:hover {
+    border-color: #73737a;
+}
+
+input {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    border: 1px solid #a8acb3;
+    margin: 10px 5px 10px 0;
+}
+
+
+/* ===== Общие стили ===== */
+
+
+/* Карточка по центру */
+.app {
+    max-width: 640px;
+    margin: 40px auto;
+    padding: 24px 28px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Шапка и подвал ===== */
+header h1 {
+    margin: 0 0 16px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+footer {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #eceef1;
+}
+
+.footer-text {
+    margin: 0;
+    font-size: 14px;
+    color: #9ca3af;
+    text-align: center;
+}
+
+/* ===== Статистика ===== */
+.stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #6b7280;
+}
+
+.stats p {
+    margin: 0;
+}
+
+/* ===== Форма добавления ===== */
+.add-task form {
+    display: flex;
+    align-items: center;
+}
+
+.add-task input {
+    flex: 1;
+    margin: 10px 0;
+}
+
+.add-message {
+    min-height: 18px;
+    margin: 0;
+    font-size: 14px;
+    color: #b91c1c;
+}
+
+/* ===== Фильтры ===== */
+.filters {
+    margin: 4px 0 8px;
+}
+
+/* ===== Список задач ===== */
+.task-list {
+    margin: 8px 0 16px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #eceef1;
+}
+
+.task-title {
+    flex: 1;
+}
+
+.task-item .delete-button {
+    margin: 0;
+}
+
+.task-item input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
